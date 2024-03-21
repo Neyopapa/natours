@@ -22,7 +22,8 @@ const viewRouter = require('./routes/viewRoutes');
 
 // Start express app
 const app = express();
-app.set('trust proxy', true);
+app.set('trust proxy', 2);
+app.get('/ip', (request, response) => response.send(request.ip));
 
 app.set('view engine', 'pug');
 
